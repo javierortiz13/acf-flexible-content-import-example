@@ -2,14 +2,12 @@
 
 A small, self-contained example of how I structure an ACF Pro build for location/service pages that editors manage themselves and that can be created in bulk.
 
-Files:
-
 | File | What it shows |
 | --- | --- |
-| `acf-json/group_service_location.json` | Field group: location details, an hours repeater, and a flexible-content `sections` field with three layouts (hero, services grid, call to action). Loaded through ACF Local JSON so it lives in Git. |
+| `group_service_location.json` | Field group: location details, an hours repeater, and a flexible-content `sections` field with three layouts (hero, services grid, call to action). In a theme it lives in `acf-json/` so ACF Local JSON keeps it in Git. |
 | `single-service_location.php` | The page template: location header, then the flexible sections. |
-| `template-parts/flexible-sections.php` | One loop over `sections`, one partial per layout, everything escaped. |
-| `inc/class-service-location-import.php` | A WP-CLI command that creates or updates pages from a CSV, writes the ACF fields by field key (repeaters and flexible content included), and supports `--dry-run`. |
+| `flexible-sections.php` | One loop over `sections`, one partial per layout, everything escaped. In a theme: `template-parts/flexible-sections.php`. |
+| `class-service-location-import.php` | A WP-CLI command that creates or updates pages from a CSV, writes the ACF fields by field key (repeaters and flexible content included), and supports `--dry-run`. In a theme: `inc/`. |
 | `sample-import.csv` | Two example rows. |
 
 ## How the import works
