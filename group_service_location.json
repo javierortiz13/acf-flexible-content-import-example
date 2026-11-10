@@ -1,0 +1,159 @@
+{
+    "key": "group_service_location",
+    "title": "Service Location",
+    "fields": [
+        {
+            "key": "field_sl_city",
+            "label": "City",
+            "name": "city",
+            "type": "text",
+            "required": 1
+        },
+        {
+            "key": "field_sl_address",
+            "label": "Address",
+            "name": "address",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_sl_phone",
+            "label": "Phone",
+            "name": "phone",
+            "type": "text"
+        },
+        {
+            "key": "field_sl_hours",
+            "label": "Hours",
+            "name": "hours",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add hours",
+            "sub_fields": [
+                {
+                    "key": "field_sl_hours_days",
+                    "label": "Days",
+                    "name": "days",
+                    "type": "text"
+                },
+                {
+                    "key": "field_sl_hours_time",
+                    "label": "Time",
+                    "name": "time",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_sl_sections",
+            "label": "Sections",
+            "name": "sections",
+            "type": "flexible_content",
+            "button_label": "Add section",
+            "layouts": {
+                "layout_sl_hero": {
+                    "key": "layout_sl_hero",
+                    "name": "hero",
+                    "label": "Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_sl_hero_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_sl_hero_text",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "textarea",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_sl_hero_image",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium"
+                        }
+                    ]
+                },
+                "layout_sl_services": {
+                    "key": "layout_sl_services",
+                    "name": "services",
+                    "label": "Services grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_sl_services_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_sl_services_items",
+                            "label": "Services",
+                            "name": "items",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Add service",
+                            "sub_fields": [
+                                {
+                                    "key": "field_sl_services_item_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_sl_services_item_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "textarea",
+                                    "rows": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "layout_sl_cta": {
+                    "key": "layout_sl_cta",
+                    "name": "cta",
+                    "label": "Call to action",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_sl_cta_text",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_sl_cta_link",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "return_format": "array"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service_location"
+            }
+        ]
+    ],
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "hide_on_screen": ["the_content"],
+    "active": true
+}
